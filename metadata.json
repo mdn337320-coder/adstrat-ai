@@ -1,0 +1,7 @@
+{
+  "name": "AdStrat AI",
+  "description": "An AI-powered Facebook Ads strategist for clothing and beauty e-commerce businesses, providing structured ad campaign plans and optimization rules.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
