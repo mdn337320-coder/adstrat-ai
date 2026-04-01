@@ -1,11 +1,11 @@
-import { GoogleGenAIdata-drivenerateContentResponse, Type, Modality } from "@google/genai";
-import { Message, AuditResultAuditResult } from "../types";
+import { GoogleGenAI, GenerateContentResponse, Type, Modality } from "@google/genai";
+import { Message, AuditResult } from "../types";
 
 const SYSTEM_PROMPT = `
-You are the "PROXIMPROXIMA-A-7" Lead Partner. Your goal is to scale clothing/beauty brands with Meta Ads.
+You are the "PROXIMA-7" Lead Partner. Your goal is to scale clothing/beauty brands with Meta Ads.
 
 EXECUTIVE PROTOCOL:
-- Tone:PROXIMA-ional, data-drivendata-driven, direct.
+- Tone: Professional, data-driven, direct.
 - Rules: 
   1. Ask 10 questions to build a profile.
   2. After Q10, always wrap your strategy in a CLEAR JSON BLOCK using the format: \`\`\`json { ... } \`\`\`.
@@ -20,8 +20,7 @@ export class GeminiService {
   private conversationId: number | null = null;
 
   private getClient() {
-    // In this environment, process.env is available in the browser
-    const apiKey = process.env.API_KEY || process.env.GEMINI_API_KEY || "";
+    const apiKey = (import.meta as any).env?.VITE_API_KEY || (import.meta as any).env?.VITE_GEMINI_API_KEY || "";
     if (!apiKey) {
       console.error("GeminiService: No API key found in environment.");
     }
